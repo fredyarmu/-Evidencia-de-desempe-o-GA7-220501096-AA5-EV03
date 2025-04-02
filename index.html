@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Software Barbería</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <p class="error" id="errorMsg"></p>
+            <button type="submit">Ingresar</button>
+            <button onclick="window.location.href='registro.html'">Registrarse</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            let usuario = document.getElementById("username").value;
+            let contraseña = document.getElementById("password").value;
+            let mensajeError = document.getElementById("errorMsg");
+    
+            // Simulación de credenciales correctas
+            if (usuario === "admin" && contraseña === "1234") {
+                alert("Inicio de sesión exitoso");
+                window.location.href = "dashboard.html"; // Redirigir a otra página
+            } else {
+                mensajeError.textContent = "Usuario o contraseña incorrectos";
+            }
+        });
+    </script>
+</body>
+</html>
