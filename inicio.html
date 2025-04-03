@@ -18,7 +18,7 @@
             <input type="text" id="username" placeholder="Usuario" required>
             <input type="password" id="password" placeholder="Contraseña" required>
             <p class="error" id="errorMsg"></p>
-            <button type="submit">Ingresar</button>
+            <button onclick="window.location.href='SobreNosotros.html'">Ingresar</button>
             <button onclick="window.location.href='registro.html'">Registrarse</button>
         </form>
     </div>
@@ -34,7 +34,7 @@
             // Simulación de credenciales correctas
             if (usuario === "admin" && contraseña === "1234") {
                 alert("Inicio de sesión exitoso");
-                window.location.href = "dashboard.html"; // Redirigir a otra página
+                window.location.href = "SobreNosotros.html"; // Redirigir a otra página
             } else {
                 mensajeError.textContent = "Usuario o contraseña incorrectos";
             }
