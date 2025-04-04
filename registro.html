@@ -1,15 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <title>Registro</title>
 </head>
-
 <body>
-    <button type="button" onclick="window.location.href='Inicio.html'">regresar</button>
-</body>
+    <div class="logo">
+        <img src="img/logobarberia.jpg" alt="">
+    </div>
+    <div class="login-container">
+        <form action="#" method="post"> 
+            <h3>Registro de Cliente</h3>
 
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre" placeholder="Nombre" required>
+
+            <label for="Apellido">Apellido:</label>
+            <input type="text" id="Apellido" name="Apellido" placeholder="Apellido" required>
+
+            <label for="segundo_apellido">Segundo Apellido:</label>
+            <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Segundo Apellido">
+
+            <label for="gmail">Correo Electrónico:</label>
+            <input type="email" id="gmail" name="gmail" placeholder="Correo electrónico" required>
+
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" maxlength="10" placeholder="Número de Teléfono" required>
+
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <select name="tipo_documento" id="tipo_documento" required>
+                <option value="">Selecciona una opción</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="PAS">Pasaporte</option>
+            </select>
+
+            <label for="numero_documento">Número de Documento:</label>
+            <input type="text" id="numero_documento" name="numero_documento" placeholder="Número de documento" required>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Contraseña" required>
+
+            <button onclick="window.location.href='registro.html'">Registrarse</button>
+            <button onclick="window.location.href='Inicio.html'">Regresar</button>
+        </form>
+    </div>
+</body>
 </html>
