@@ -1,40 +1,48 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Alinea arriba */
     height: 100vh;
-    background-color: #c7c3c3;
+    background-color: #222;
     background-repeat: no-repeat;
+    padding-top: 70px;
+    margin: 0;
+    color: white;
+    position: relative;
+}
+/* esto marca es eltilo para el logo de lapagina*/
+.logo {
+    position: absolute;  /* Permite colocarlo en cualquier parte de la pantalla */
+    left: 20px;  /* 🔹 Lo pega al lado izquierdo */
+    top: 50%;  /* 🔹 Lo centra verticalmente */
+    transform: translateY(-50%);  /* 🔹 Ajusta el centrado perfecto */
 }
 
+.logo img {
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover;
+    width: 700px;  /* 🔹 Ajusta el tamaño del logo */
+    height: 700px;
+}
+/* desde aqui se inicia con el estilo del formulario de inisio de sesion*/
 .login-container {
     background: white;
-    padding: 100px;
+    padding: 150px;
     border-radius: 80px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 200px;
     text-align: center;
-    margin-left: auto;
-    /* Mueve el formulario a la derecha */
-    margin-right: 50px;
+    margin-left: auto;  /* Centra pero permite margen derecho */
+    margin-right: 200px; /* 🔹 Ajusta el espacio desde el borde derecho */
+    margin-top: 50px; /* 🔽 Baja el formulario */
 }
-
+/* desde aqui se inicia cnon los estilos para los botones*/
 input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
-}
-
-button:hover {
-    background: #218838;
-}
-
-.error {
-    color: red;
-    font-size: 14px;
 }
 
 button {
@@ -45,4 +53,56 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+    margin-bottom: 10px; /* 👈 Esto separa los botones entre sí */
+}
+
+button:hover {
+    background: #218838;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+/* desde aqui seinicia con los estilos para el menu desplegable*/
+.menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+}
+
+.menu-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 1;
+    right: 0;
+}
+
+.menu-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* estilos para la pagina de quienes somos */
+.texto_pagina{
+    text-align: center;
 }

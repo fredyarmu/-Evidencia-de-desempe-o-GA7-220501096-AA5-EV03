@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Software Barbería</title>
     <link rel="stylesheet" href="css/estilos.css">
-
 </head>
 
 <body>
@@ -22,24 +21,14 @@
             <button onclick="window.location.href='registro.html'">Registrarse</button>
         </form>
     </div>
-
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            let usuario = document.getElementById("username").value;
-            let contraseña = document.getElementById("password").value;
-            let mensajeError = document.getElementById("errorMsg");
-
-            // Simulación de credenciales correctas
-            if (usuario === "admin" && contraseña === "1234") {
-                alert("Inicio de sesión exitoso");
-                window.location.href = "SobreNosotros.html"; // Redirigir a otra página
-            } else {
-                mensajeError.textContent = "Usuario o contraseña incorrectos";
-            }
-        });
-    </script>
+    <div class="menu">
+        <button class="menu-btn" onclick="toggleMenu()">Menú</button>
+        <div class="menu-content" id="menuContent">
+            <a href="SobreNosotros.html">Sobre Nosotros</a>
+            <a href="OtrasPaginas.html">Otras Paginas</a>
+        </div>
+    </div>
+    <script src="validaciones.js"></script> <!-- Conectar con JavaScript -->
 </body>
 
 </html>
