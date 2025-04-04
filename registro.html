@@ -14,22 +14,22 @@
         <form action="#" method="post"> 
             <h3>Registro de Cliente</h3>
 
-            <label for="Nombre"></label>
+            <label for="Nombre">Nombre:</label>
             <input type="text" id="Nombre" name="Nombre" placeholder="Nombre" required>
 
-            <label for="Apellido"></label>
+            <label for="Apellido">Apellido:</label>
             <input type="text" id="Apellido" name="Apellido" placeholder="Apellido" required>
 
-            <label for="segundo_apellido"></label>
+            <label for="segundo_apellido">Segundo Apellido:</label>
             <input type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Segundo Apellido">
 
-            <label for="gmail"></label>
+            <label for="gmail">Correo Electrónico:</label>
             <input type="email" id="gmail" name="gmail" placeholder="Correo electrónico" required>
 
-            <label for="telefono"></label>
+            <label for="telefono">Número de Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" maxlength="10" placeholder="Número de Teléfono" required>
 
-            <label for="tipo_documento"></label>
+            <label for="tipo_documento">Tipo de Documento:</label>
             <select name="tipo_documento" id="tipo_documento" required>
                 <option value="">Selecciona una opción</option>
                 <option value="CC">Cédula de Ciudadanía</option>
@@ -38,7 +38,7 @@
                 <option value="PAS">Pasaporte</option>
             </select>
 
-            <label for="numero_documento"></label>
+            <label for="numero_documento">Número de Documento:</label>
             <input type="text" id="numero_documento" name="numero_documento" placeholder="Número de documento" required>
 
             <label for="fechaNacimiento"></label>
@@ -52,10 +52,10 @@
                 <option value="Otro">Otro</option>
             </select>
 
-            <label for="password"></label>
+            <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
 
-            <label for="confirmPassword"></label>
+            <label for="confirmPassword">Confirmar Contraseña:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Contraseña" required>
 
             <button onclick="window.location.href='registro.html'">Registrarse</button>

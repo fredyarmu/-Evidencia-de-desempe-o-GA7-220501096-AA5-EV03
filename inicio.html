@@ -1,34 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Software Barbería</title>
-    <link rel="stylesheet" href="css/estilos.css">
+<title>Software Barbería</title>
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div class="logo">
-        <img src="img/logobarberia.jpg" alt="">
+<div class="logo">
+    <img src="img/logobarberia.jpg" alt="">
+</div>
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <p class="error" id="errorMsg"></p>
+        <button onclick="window.location.href='SobreNosotros.html'">Ingresar</button>
+        <button onclick="window.location.href='registro.html'">Registrarse</button>
+    </form>
+</div>
+<div class="menu">
+    <button class="menu-btn" onclick="toggleMenu()">Menú</button>
+    <div class="menu-content" id="menuContent">
+        <a href="SobreNosotros.html">Sobre Nosotros</a>
+        <a href="OtrasPaginas.html">Otras Paginas</a>
     </div>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Usuario" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <p class="error" id="errorMsg"></p>
-            <button onclick="window.location.href='SobreNosotros.html'">Ingresar</button>
-            <button onclick="window.location.href='registro.html'">Registrarse</button>
-        </form>
-    </div>
-    <div class="menu">
-        <button class="menu-btn" onclick="toggleMenu()">Menú</button>
-        <div class="menu-content" id="menuContent">
-            <a href="SobreNosotros.html">Sobre Nosotros</a>
-            <a href="OtrasPaginas.html">Otras Paginas</a>
-        </div>
-    </div>
-    <script src="validaciones.js"></script> <!-- Conectar con JavaScript -->
+</div>
+<script src="validaciones.js"></script> <!-- Conectar con JavaScript -->
 </body>
 
 </html>

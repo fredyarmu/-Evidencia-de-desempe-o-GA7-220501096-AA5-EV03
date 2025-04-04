@@ -13,8 +13,8 @@ body {
 /* esto marca es eltilo para el logo de lapagina*/
 .logo {
     position: absolute;  /* Permite colocarlo en cualquier parte de la pantalla */
-    left: 20px;  /* 🔹 Lo pega al lado izquierdo */
-    top: 50%;  /* 🔹 Lo centra verticalmente */
+    top:350px; /* Ajusta según necesites */
+    left:50px;  /* 🔹 Lo centra verticalmente */
     transform: translateY(-50%);  /* 🔹 Ajusta el centrado perfecto */
 }
 
@@ -27,7 +27,7 @@ body {
 /* desde aqui se inicia con el estilo del formulario de inisio de sesion*/
 .login-container {
     background: rgb(177, 169, 169);
-    padding: 150px;
+    padding: 80px;
     border-radius: 80px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 200px;
@@ -110,6 +110,22 @@ button:hover {
 
 .registro .logo {
     position: absolute;
-    top: 700px; /* Ajusta según necesites */
+    top: 500px; /* Ajusta según necesites */
     left:90px; /* Ajusta según necesites */
+}
+select {
+    width: 111%;  /* Hace que ocupe todo el ancho del formulario */
+    height: 50px;  /* Aumenta la altura */
+    font-size: 18px; /* Aumenta el tamaño del texto */
+    padding: 10px;  /* Agrega espacio interno */
+    border-radius: 8px;  /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde del cuadro */
+}
+input[type="date"] {
+    width: 100%;  /* Hace que ocupe todo el ancho del formulario */
+    height: 30px;  /* Aumenta la altura */
+    font-size: 18px; /* Aumenta el tamaño del texto */
+    padding: 10px;  /* Agrega espacio interno */
+    border-radius: 8px;  /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde del cuadro */
 }
