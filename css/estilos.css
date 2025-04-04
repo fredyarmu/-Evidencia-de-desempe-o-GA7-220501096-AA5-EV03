@@ -106,3 +106,10 @@ button:hover {
 .texto_pagina{
     text-align: center;
 }
+/* estilos para lapagina deregistro*/
+
+.registro .logo {
+    position: absolute;
+    top: 700px; /* Ajusta según necesites */
+    left:90px; /* Ajusta según necesites */
+}
