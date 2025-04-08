@@ -1,7 +1,8 @@
+/* === Estilos generales === */
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    align-items: flex-start; /* Alinea arriba */
+    align-items: flex-start;
     height: 100vh;
     background-color: #222;
     background-repeat: no-repeat;
@@ -10,75 +11,168 @@ body {
     color: white;
     position: relative;
 }
-/* esto marca es eltilo para el logo de lapagina*/
+
+/* === Estilo del logo === */
 .logo {
-    position: absolute;  /* Permite colocarlo en cualquier parte de la pantalla */
-    top:350px; /* Ajusta según necesites */
-    left:50px;  /* 🔹 Lo centra verticalmente */
-    transform: translateY(-50%);  /* 🔹 Ajusta el centrado perfecto */
+    position: absolute;
+    top: 400px;
+    left: 100px;
+    transform: translateY(-50%);
 }
 
 .logo img {
-    border-radius: 50%; /* Hace la imagen redonda */
+    border-radius: 60%;
     object-fit: cover;
-    width: 700px;  /* 🔹 Ajusta el tamaño del logo */
+    width: 700px;
     height: 700px;
 }
-/* desde aqui se inicia con el estilo del formulario de inisio de sesion*/
-.login-container {
+/* Solo aplica si el body tiene la clase "inicio"  y aplica solo para el formulario de iniciar sesion*/
+body.inicio .login {
     background: rgb(177, 169, 169);
-    padding: 80px;
-    border-radius: 80px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 200px;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
     text-align: center;
-    margin-left: auto;  /* Centra pero permite margen derecho */
-    margin-right: 200px; /* 🔹 Ajusta el espacio desde el borde derecho */
-    margin-top: 50px; /* 🔽 Baja el formulario */
-}
-/* desde aqui se inicia cnon los estilos para los botones*/
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: 70px;
 }
 
-button {
+/* Inputs del formulario de inicio de sesión */
+body.inicio .login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Botones del formulario de inicio de sesión */
+body.inicio .login button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+body.inicio .login button:hover {
+    background-color: #218838;
+}
+
+/* === Formulario de registro/login === */
+.login-container {
+    background: rgb(177, 169, 169);
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+/* Inputs, selects y botones dentro del formulario */
+.login-container input,
+.login-container select,
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Estilo específico para input tipo fecha */
+.login-container input[type="date"] {
+    height: 40px;
+    font-size: 16px;
+}
+
+/* Selects */
+.login-container select {
+    height: 40px;
+    font-size: 16px;
+}
+
+/* Labels */
+.login-container label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Botones dentro del formulario */
+.login-container button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    border: none;
+}
+
+.login-container button:hover {
+    background: #218838;
+}
+
+/* === Botón de la página de inicio (Registrarse) === */
+.inicio-container button {
+    width: auto;
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    margin-bottom: 10px; /* 👈 Esto separa los botones entre sí */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
 }
 
-button:hover {
-    background: #218838;
+.inicio-container button:hover {
+    background-color: #218838;
 }
 
-.error {
-    color: red;
-    font-size: 14px;
-}
-/* desde aqui seinicia con los estilos para el menu desplegable*/
+/* === Menú desplegable === */
 .menu {
     position: absolute;
     top: 10px;
     right: 10px;
-    display: inline-block;
+    z-index: 2;
 }
 
 .menu-btn {
-    background-color: #3498db;
+    background-color: #007bff;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+.menu-btn:hover {
+    background-color: #218838; /* Cambia al pasar el mouse */
 }
 
 .menu-content {
@@ -99,33 +193,76 @@ button:hover {
 }
 
 .menu-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #218838;
 }
-
-/* estilos para la pagina de quienes somos */
-.texto_pagina{
-    text-align: center;
-}
-/* estilos para lapagina deregistro*/
-
+/* === Página de registro === */
 .registro .logo {
     position: absolute;
-    top: 500px; /* Ajusta según necesites */
-    left:90px; /* Ajusta según necesites */
+    top: 500px;
+    left: 90px;
 }
-select {
-    width: 111%;  /* Hace que ocupe todo el ancho del formulario */
-    height: 50px;  /* Aumenta la altura */
-    font-size: 18px; /* Aumenta el tamaño del texto */
-    padding: 10px;  /* Agrega espacio interno */
-    border-radius: 8px;  /* Bordes redondeados */
-    border: 1px solid #ccc; /* Borde del cuadro */
+
+/* === Mensajes de error === */
+.error {
+    color: red;
+    font-size: 14px;
 }
-input[type="date"] {
-    width: 100%;  /* Hace que ocupe todo el ancho del formulario */
-    height: 30px;  /* Aumenta la altura */
-    font-size: 18px; /* Aumenta el tamaño del texto */
-    padding: 10px;  /* Agrega espacio interno */
-    border-radius: 8px;  /* Bordes redondeados */
-    border: 1px solid #ccc; /* Borde del cuadro */
+/* desde aqui se inicia con eldiseñodelapagina Sobre Nosotros */
+body.SobreNosotros {
+    position: relative;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
+
+/* Fondo del logo centrado y opaco */
+/* Fondo del logo centrado y opaco */
+body.SobreNosotros::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/logobarberia.jpg'); /* Ajusta la ruta si es necesario */
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    width: 500px;
+    height: 500px;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* El contenido se posiciona encima del fondo */
+body.SobreNosotros > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón en la esquina superior derecha */
+body.SobreNosotros .menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+/* Texto centrado */
+body.SobreNosotros .texto_pagina {
+    text-align: center;
+    font-size: 22px;
+    max-width: 800px;
+    margin: 120px auto 20px;
+}
+
+/* Contenedor del contenido centrado */
+body.SobreNosotros .contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* estilos para la pagina de administrador*/
+
