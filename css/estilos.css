@@ -266,3 +266,76 @@ body.SobreNosotros .contenido {
 }
 /* estilos para la pagina de administrador*/
 
+/* Estilos para el formulario de recuperación */
+.login {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 100px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #0f0d0d;
+    text-align: center;
+    
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.recuperar-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.recovery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;  /* Ocupa toda la altura de la pantalla */
+  background-color: #f5f5f5;  /* Color de fondo opcional */
+  padding: 20px;
+}
+
+.recovery-form {
+  width: 100%;
+    max-width: 400px;      /* Ancho máximo del formulario */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+}
+
+.recovery-form h2 {
+  margin-bottom: 20px;
+    color: #333;
+}
+
+.recovery-form input {
+ width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.recovery-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}

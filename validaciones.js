@@ -32,4 +32,23 @@ window.onclick = function(event) {
                 mensajeError.textContent = "Usuario o contraseña incorrectos";
             }
         });
+        // logica para laopcion de recuperar contraseña
+        document.getElementById("recuperarForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const email = document.getElementById("emailRecuperacion").value;
+    const errorMsg = document.getElementById("errorRecuperacion");
+
+    // Simulación: Verificar si el email existe (en un caso real, esto se haría en el backend)
+    const usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuario = usuariosRegistrados.find(user => user.email === email);
+
+    if (usuario) {
+        // Simular envío de correo (en realidad, muestra un mensaje)
+        alert(`Se ha enviado un enlace de recuperación a: ${email}\n(Simulación: Ver consola para detalles)`);
+        console.log(`Enlace simulado: http://tudominio.com/reset-password?token=ABC123`);
+        window.location.href = "inicio.html"; // Redirigir al inicio
+    } else {
+        errorMsg.textContent = "El correo no está registrado.";
+    }
+});
     
