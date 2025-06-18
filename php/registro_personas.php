@@ -1,15 +1,19 @@
 <?php
 // Mostrar errores para depurar si algo falla
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Verificamos si el formulario fue enviado por POST
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Conexión a la base de datos
+
     $conexion = new mysqli("localhost", "root", "", "barberia");
 
-    // estas lineas me permiten detectar si hay algun errorde conexion
+    // estas lineas me permiten detectar si hay algun error de conexion
+
     if ($conexion->connect_error) {
         die("❌ Error de conexión: " . $conexion->connect_error);
     }
@@ -26,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $numero_documento = $_POST['Numero_documento'];
     $sexo = $_POST['Sexo'];
 
-    // Preparar la consulta
+    // Prepara la consulta
+
     $sql = "INSERT INTO personas 
     (Primer_nombre, Segundo_nombre, Primer_apellido, Segundo_apellido, Fecha_Nacimiento, Correo, Telefono, Tipo_documento, Numero_documento, Sexo)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

@@ -10,9 +10,22 @@
     <div class="logo">
         <img src="img/logobarberia.jpg" alt="">
     </div>
+
+    <!-- en este bloque inicia el formuario -->
+
     <div class="login-container">
         <form action="php/registro_personas.php" method="POST">
             <h3>Registro de personas</h3> 
+             <label for="tipo_documento">Tipo de Documento:</label>
+            <select name="Tipo_documento" id="tipo_documento" required>
+                <option value="">Selecciona una opción</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="PAS">Pasaporte</option>
+            </select>
+
+            <input type="text" id="Numero_documento" name="Numero_documento" placeholder="Número de documento" required>
             <input type="text" id="Primer_nombre" name="Primer_nombre" placeholder="Primer Nombre" required>  
             <input type="text" id="Segundo_nombre" name="Segundo_nombre" placeholder="Segundo Nombre" required>  
             <input type="text" id="Primer_apellido" name="Primer_apellido" placeholder="Primer Apellido" required>         
@@ -23,17 +36,6 @@
             
             <input type="email" id="Correo" name="Correo" placeholder="Correo electrónico" required>
             <input type="tel" id="Telefono" name="Telefono" pattern="[0-9]{10}" maxlength="10" placeholder="Número de Teléfono" required>
-
-            <label for="tipo_documento">Tipo de Documento:</label>
-            <select name="Tipo_documento" id="tipo_documento" required>
-                <option value="">Selecciona una opción</option>
-                <option value="CC">Cédula de Ciudadanía</option>
-                <option value="TI">Tarjeta de Identidad</option>
-                <option value="CE">Cédula de Extranjería</option>
-                <option value="PAS">Pasaporte</option>
-            </select>
-
-            <input type="text" id="Numero_documento" name="Numero_documento" placeholder="Número de documento" required>
             
             <label for="sexo">Sexo</label>
             <select name="Sexo" id="sexo" required>
@@ -47,6 +49,9 @@
         </form>
         <button onclick="window.location.href='Inicio.html'">Regresar</button>
     </div>
+
+    <!-- con esta  linea de codigo se llama las validaciones de js-->
+     
     <script src="js/validaciones.js"></script>
 </body>
 </html>
