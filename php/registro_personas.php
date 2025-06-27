@@ -1,63 +1,41 @@
 <?php
-// Mostrar errores para depurar si algo falla
+require 'conexion.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+try {
+    $sql = "INSERT INTO personas (
+    Tipo_documento, Numero_documento, Primer_nombre, Segundo_nombre,
+    Primer_apellido, Segundo_apellido, Fecha_Nacimiento,
+    Correo, Telefono, Sexo, Password
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-// Verificamos si el formulario fue enviado por POST
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    $_POST['Tipo_documento'],
+    $_POST['Numero_documento'],
+    $_POST['Primer_nombre'],
+    $_POST['Segundo_nombre'],
+    $_POST['Primer_apellido'],
+    $_POST['Segundo_apellido'],
+    $_POST['Fecha_Nacimiento'],
+    $_POST['Correo'],
+    $_POST['Telefono'],
+    $_POST['Sexo'],
+    password_hash($_POST['Numero_documento'], PASSWORD_DEFAULT)
+]);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Conexión a la base de datos
+    // Ahora lo agregamos como cliente
+    $persona_id = $pdo->lastInsertId();
+    $pdo->prepare("INSERT INTO clientes (Id_persona, Vip) VALUES (?, 0)")->execute([$persona_id]);
 
-    $conexion = new mysqli("localhost", "root", "", "barberia");
+   echo "<script>
+    alert('Registro guardado con éxito');
+    window.location.href = '../inicio.html';
+</script>";
+exit();
 
-    // estas lineas me permiten detectar si hay algun error de conexion
 
-    if ($conexion->connect_error) {
-        die("❌ Error de conexión: " . $conexion->connect_error);
-    }
-
-    // Recibir datos del formulario
-    $primer_nombre = $_POST['Primer_nombre'];
-    $segundo_nombre = $_POST['Segundo_nombre'];
-    $primer_apellido = $_POST['Primer_apellido'];
-    $segundo_apellido = $_POST['Segundo_apellido'];
-    $fecha_nacimiento = $_POST['Fecha_Nacimiento'];
-    $correo = $_POST['Correo'];
-    $telefono = $_POST['Telefono'];
-    $tipo_documento = $_POST['Tipo_documento'];
-    $numero_documento = $_POST['Numero_documento'];
-    $sexo = $_POST['Sexo'];
-
-    // Prepara la consulta
-
-    $sql = "INSERT INTO personas 
-    (Primer_nombre, Segundo_nombre, Primer_apellido, Segundo_apellido, Fecha_Nacimiento, Correo, Telefono, Tipo_documento, Numero_documento, Sexo)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = $conexion->prepare($sql);
-
-    if (!$stmt) {
-        die("❌ Error al preparar la consulta: " . $conexion->error);
-    }
-
-    $stmt->bind_param("ssssssssss", 
-        $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido,
-        $fecha_nacimiento, $correo, $telefono, $tipo_documento, $numero_documento, $sexo);
-
-    // Ejecutar
-    if ($stmt->execute()) {
-        echo "✅ Registro guardado exitosamente.";
-    } else {
-        echo "❌ Error al guardar el registro: " . $stmt->error;
-    }
-
-    // Cerrar todo
-    $stmt->close();
-    $conexion->close();
-
-} else {
-    echo "⚠️ Acceso no permitido.";
+} catch (Exception $e) {
+    die("Error al registrar cliente: " . $e->getMessage());
 }
 ?>

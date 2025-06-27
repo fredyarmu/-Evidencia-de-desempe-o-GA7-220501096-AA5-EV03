@@ -1,16 +1,13 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$host = 'localhost';
+$db = 'barberia'; // nombre de tu base de datos
+$user = 'root'; // usuario de Laragon
+$pass = ''; // contraseña vacía por defecto en Laragon
 
-// ESTAS LINEAS DE CODIGO ES PARA REALIZAR LA CONEXION A LA BASE DE DATOS
-
-$conexion = new mysqli("localhost", "root", "", "barberia");
-
-// CON ESTE BLOQUE DE CODIGO ME DOY CUENTA SI LA CONEXION SI SE DA O NO Y ME MUESTRA EN PANTALLA
-
-if ($conexion->connect_error) {
-    die("Error al conectar: " . $conexion->connect_error);
-} else {
-    echo "✅ Conexión exitosa a la base de datos.";
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
 ?>
