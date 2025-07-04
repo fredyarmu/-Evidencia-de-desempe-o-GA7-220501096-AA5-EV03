@@ -1,13 +1,16 @@
 <?php
 $host = 'localhost';
-$db = 'barberia'; // nombre de tu base de datos
-$user = 'root'; // usuario de Laragon
-$pass = ''; // contraseña vacía por defecto en Laragon
+$db   = 'barberia';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+    die('Error en la conexión: ' . $e->getMessage());
 }
 ?>
